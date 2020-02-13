@@ -1,7 +1,14 @@
 #!/usr/bin/env bash
 
+journal=$(mktemp)
+
+trap "rm -r $journal" EXIT
+
 cd "$HOME/$journal_name"
-for i in $(find -name "$@"); do
-  echo -e "\n== $i\n" >> $HOME/"$@".adoc;
-  cat $i >> $HOME/"$@".adoc;
+for _file in $(find -name "$@" | sort); do
+  echo -e "\n== $_file\n" >> $journal
+  cat $_file >> $journal
 done
+unset _file
+
+. "$HOME/.config/journal/write"

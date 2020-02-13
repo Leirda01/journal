@@ -3,9 +3,10 @@
 date=$(date --date="$@" +%Y/%m/%d)
 journal=$(mktemp)
 
-trap "rm -r $journal" EXIT 
+trap "rm -r $journal" EXIT
 
-for _file in $HOME/$journal_name/$date/*; do
+cd "$HOME/$journal_name/$date"
+for _file in *; do
   echo -e "\n== $_file\n" >> $journal
   cat "$_file" >> $journal
 done
