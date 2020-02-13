@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-if [[ $($($socket) && vim --serverlist | grep JOURNAL) ]]; then
-  vim --servername JOURNAL --remote-send "<C-\><C-N>:xall<CR>:qall!<CR>"
+if [[ $editor = vim ]]; then
+  _vim_flag=$([[ $socket ]] && echo --servername JOURNAL)
+  if [[ $($($socket) && vim --serverlist | grep JOURNAL) ]]; then
+    vim --servername JOURNAL --remote-send "<C-\><C-N>:xall<CR>:qall!<CR>"
+  fi
 fi
 
-vim $([[ $socket ]] && echo --servername JOURNAL) "$journal"
+$editor $_vim_flag "$journal"
+unset _vim_flag

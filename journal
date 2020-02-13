@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+editor=${EDITOR:=vim}
 options="$HOME/.config/journal"
 journal_name=${JOURNAL_NAME:=saveuriendir}
 
