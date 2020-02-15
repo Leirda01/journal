@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-journal=$(mktemp)
+journal=$(mktemp journal.XXXXXXXXXX)
 
 trap "rm -r $journal" EXIT
 

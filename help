@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 printf """\
-Usage: journal COMMAND { OPTION | help }
+Usage: journal { help | COMMAND } [ FILE | DATE ]
 
 COMMAND
-  write\t\tUse ${EDITOR:=vim} to edit a page today.
-  day\t\tUse ${EDITOR:=vim} to read pages of the specified day.
+  help\t\tGive help message about COMMAND.
+  write\t\tUse ${EDITOR:=vim} to edit a page.
+  date\t\tUse ${EDITOR:=vim} to read pages of the specified day.
   consult\tRead journal pages by name in history.
   ls\t\tList all current day pages.
   rm\t\tRemove page(s) of current day.
