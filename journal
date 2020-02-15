@@ -10,7 +10,7 @@ elif [[ $(type -t $1) ]]; then
   call_command="$1" && shift
 fi
 
-[[ $(vim --version | grep +clientserver) ]] && socket="true"
+[[ $(vim --version | grep +clientserver) ]] && socket=true
 
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y/%m/%d)
