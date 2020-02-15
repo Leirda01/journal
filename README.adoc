@@ -1,0 +1,3 @@
+= Simple journaling script made in bash
+
+this is what I use to write, read & manage efficiently my journals.
