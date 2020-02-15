@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 date=$(date --date="$@" +%Y/%m/%d)
-journal=$(mktemp journal.XXXXXXXXXX)
+journal=$(mktemp /tmp/journal.XXXXXXXXXX)
 
 trap "rm -r $journal" EXIT
 
