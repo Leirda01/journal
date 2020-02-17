@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 editor=${EDITOR:=vim}
-path="$HOME/.config/journal"
+path="$HOME/.config/journal/lib"
 journal_name=${JOURNAL_NAME:=saveuriendir}
 
 if [[ ( -f $path/$1 ) && ( -x $path/$1 ) ]]; then
