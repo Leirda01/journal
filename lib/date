@@ -12,4 +12,5 @@ for _file in *; do
 done
 unset _file
 
-. "$HOME/.config/journal/write"
+echo $path
+. "$command_path/write"

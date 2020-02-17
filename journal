@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 editor=${EDITOR:=vim}
-path="$HOME/.config/journal/lib"
 journal_name=${JOURNAL_NAME:=saveuriendir}
+command_path="$HOME/.config/journal/lib"
 
-if [[ ( -f $path/$1 ) && ( -x $path/$1 ) ]]; then
-  call_mode="$path/$1" && shift
+if [[ ( -f $command_path/$1 ) && ( -x $command_path/$1 ) ]]; then
+  call_mode="$command_path/$1" && shift
 elif [[ $(type -t $1) ]]; then
   call_command="$1" && shift
 fi
@@ -16,13 +16,13 @@ fi
 date=$(date --date=$date +%Y/%m/%d)
 
 [[ $@ ]] && journal="${@%%.adoc}.adoc" || journal="main.adoc"
-path="$HOME/$journal_name/$date/"
+journal_path="$HOME/$journal_name/$date/"
 
-mkdir -p "$path"; cd "$path"
+mkdir -p "$journal_path"; cd "$journal_path"
 if [[ $call_mode ]]; then
   . $call_mode 
 elif [[ $call_command ]]; then
   $call_command "$@"
 else
-  . $path/write
+  . $command_path/write
 fi

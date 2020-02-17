@@ -11,4 +11,4 @@ for _file in $(find -name "$@" | sort); do
 done
 unset _file
 
-. "$HOME/.config/journal/write"
+. "$command_path/write"
