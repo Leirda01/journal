@@ -2,29 +2,32 @@
 
 case "$1" in
   ("") printf """\
-Usage: journal { help | COMMAND } [ NAME | DATE ]
+Usage: journal [help]  { COMMAND } [OPTIONS]
 
 COMMAND
   help\t\tGive help message about COMMAND.
-  write\t\tUse ${EDITOR:=vim} to edit a page.
-  date\t\tUse ${EDITOR:=vim} to read pages of the specified day.
+  write\t\tUse \$EDITOR or vim to edit a page.
+  date\t\tUse \$EDITOR or vim to read pages of the specified day.
   consult\tRead journal pages by name in history.
   ls\t\tList all current day pages.
   rm\t\tRemove page(s) of current day.
   any command\tExecute a command in the current day directory.
 """ ;;
   ("help") printf """\
-Usage: journal help [ COMMAND ]
+Usage: journal help [COMMAND]
 
   Give a short description or help message about the specified COMMAND.
 """ ;;
   ("write") printf """\
-Usage: journal write [ NAME ]
+Usage: journal write [NAME]
 
   create or edit a journal page in current day with \$EDITOR or vim by default.
   If NAME is specified, a new page \`NAME.adoc' now exists. Default name is \`main.adoc'.
 
-  Short form is \`journal [ NAME ]' where NAME cannot be in \$PATH.
+  Short form is \`journal [NAME]' where NAME cannot be in \$PATH.
   e.g.: \`journal test' doesn't open the page named \`test.adoc'.
+""" ;;
+  (*) printf """\
+journal: $1: command not found. Try official documentation about command.
 """ ;;
 esac
