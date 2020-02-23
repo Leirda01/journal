@@ -1,3 +1,10 @@
 = Simple journaling script made in bash
 
 this is what I use to write, read & efficiently manage my journal.
+
+TODO
+
+* l’idée d’avoir un sommaire pour afficher le titre des pages
+** en fonction du jour
+** dans l’intégralité du journal
+** dans un intervalle de temps
