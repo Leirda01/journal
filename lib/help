@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 case "$1" in
+
   ("") printf """\
 Usage: journal [help]  { COMMAND } [OPTIONS]
 
@@ -13,11 +14,20 @@ COMMAND
   rm\t\tRemove page(s) of current day.
   any command\tExecute a command in the current day directory.
 """ ;;
+
   ("help") printf """\
 Usage: journal help [COMMAND]
 
   Give a short description or help message about the specified COMMAND.
 """ ;;
+
+  ("consult") printf """\
+Usage: journal consult [NAME]
+
+  search and display all pages matching NAME.
+  NAME can be any regexp enclosed by quotes.
+""" ;;
+
   ("write") printf """\
 Usage: journal write [NAME]
 
@@ -27,7 +37,9 @@ Usage: journal write [NAME]
   Short form is \`journal [NAME]' where NAME cannot be in \$PATH.
   e.g.: \`journal test' doesn't open the page named \`test.adoc'.
 """ ;;
+
   (*) printf """\
 journal: $1: command not found. Try official documentation about command.
 """ ;;
+
 esac
