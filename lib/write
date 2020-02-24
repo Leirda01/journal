@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-(
 if [[ $editor = vim ]]; then
   _vim_flag=$([[ $socket ]] && echo --servername JOURNAL)
   if $socket && [[ $(vim --serverlist | grep JOURNAL) ]]; then
@@ -9,4 +8,3 @@ if [[ $editor = vim ]]; then
 fi
 
 $editor $_vim_flag "$journal"
-)
