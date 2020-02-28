@@ -2,9 +2,12 @@
 
 this is what I use to write, read & efficiently manage my journal.
 
-TODO
+== TODO
 
-* l’idée d’avoir un sommaire pour afficher le titre des pages
+* Un sommaire pour afficher le titre des pages
 ** en fonction du jour
 ** dans l’intégralité du journal
 ** dans un intervalle de temps
+
+* Rendre le script compatible à `MacOS`.
+** Notamment l’appel à la commande `date`.
