@@ -10,8 +10,6 @@ elif [[ $(type -t $1) ]]; then
   call_command="$1" && shift
 fi
 
-[[ $(vim --version | grep +clientserver) ]] && socket=true
-
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y/%m/%d)
 
@@ -22,7 +20,7 @@ mkdir -p "$journal_path"; cd "$journal_path"
 if [[ $call_mode ]]; then
   . $call_mode 
 elif [[ $call_command ]]; then
-  $call_command "$@"
+  $call_command $@
 else
   . $command_path/write
 fi
