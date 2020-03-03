@@ -17,10 +17,12 @@ date=$(date --date=$date +%Y/%m/%d)
 journal_path="$HOME/$journal_name/$date/"
 
 mkdir -p "$journal_path"; cd "$journal_path"
+(
 if [[ $call_mode ]]; then
-  . $call_mode 
+  . $call_mode
 elif [[ $call_command ]]; then
   $call_command $@
 else
   . $command_path/write
 fi
+)
