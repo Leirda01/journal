@@ -12,12 +12,14 @@ elif [[ $(type -t $1) ]]; then
 fi
 
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
-date=$(date --date=$date +%Y$journal_separator%m$journal_separator%d)
+date=$(date --date=$date +%Y${journal_separator}%m${journal_separator}%d)
 
 [[ $@ ]] && journal="${@%%.adoc}.adoc" || journal="main.adoc"
-path="$HOME/$journal_name/$date/"
+journal="${date}${journal_separator}${journal}"
 
+path="$HOME/$journal_name/"
 mkdir -p "$path"; cd "$path"
+
 (
 if [[ $call_mode ]]; then
   . $call_mode
