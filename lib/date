@@ -1,16 +1,14 @@
 #!/usr/bin/env bash
 
-date=$(date --date="$@" +%Y/%m/%d)
+date=$(date --date="$@" +%Y${journal_separator}%m${journal_separator}%d)
 journal=$(mktemp /tmp/journal.XXXXXXXXXX)
 
 trap "rm -r $journal" EXIT
 
-cd "$HOME/$journal_name/$date"
-for _file in *; do
-  echo -e "\n== $_file\n" >> $journal
-  cat "$_file" >> $journal
+cd "$HOME/$journal_name/"
+for file in $(ls ${date}); do
+  echo -e "\n=> $file\n" >> $journal
+  cat "${date}${journal_separator}$file" >> $journal
 done
-unset _file
 
-echo $path
 . "$command_path/write"
