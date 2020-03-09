@@ -10,16 +10,15 @@ this is what I use to write, read & efficiently manage my journal.
 * `$JOURNAL_SEP` should be the separator between date & page name.
 * `$EDITOR` should be the editor you wish to use to edit your journal.
 
-=== Developper
+=== Developpers
 
 * `$command_path` should not be changed. tell where to search for COMMAND.
 * `$command_path` should only contain executable files.
 * `$call_mode` the custom COMMAND you try to execute.
 * `$call_command` the UNIX command you try to execute otherwise.
-* `$date` the date of the current day.
-* `$page` the date + page name user wish to edit.
+* `$date` the current date in the specified format.
+* `$page` the date + page name user wish to edit in the specified format.
 * `$path` the path where to create the page use wish to edit.
-
 
 == TODO
 
@@ -32,3 +31,5 @@ this is what I use to write, read & efficiently manage my journal.
 ** Notamment l’appel à la commande `date`.
 
 * trop de variables pour exprimer des concepts pas clair. Simplifier.
+** Spécifier un format style `y-m-d/j`, `y/m/d/j`, `y/m/d-j`, `y-m-d_j`, _etc_.?
+** Généraliser les noms pour avec l’usage de `dirname` et `basename`.
