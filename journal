@@ -14,10 +14,10 @@ fi
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
 date=$(date --date=$date +%Y${journal_separator}%m${journal_separator}%d)
 
-[[ $@ ]] && journal="${@%%.adoc}.adoc" || journal="main.adoc"
-journal="${date}${journal_separator}${journal}"
+[[ $@ ]] && page="${@%%.adoc}.adoc" || page="main.adoc"
+page="$(basename ${date}${journal_separator}${page})"
 
-path="$HOME/$journal_name/"
+path="$(dirname $HOME/$journal_name/$page)"
 mkdir -p "$path"; cd "$path"
 
 (

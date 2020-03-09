@@ -2,12 +2,12 @@
 
 journal=$(mktemp /tmp/journal.XXXXXXXXXX)
 
-trap "rm -r $journal" EXIT
+trap "rm -r $page" EXIT
 
 cd "$HOME/$journal_name"
 for _file in $(find -name "$@" | sort); do
-  echo -e "\n== $_file\n" >> $journal
-  cat $_file >> $journal
+  echo -e "\n== $_file\n" >> $page
+  cat $_file >> $page
 done
 unset _file
 

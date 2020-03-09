@@ -4,7 +4,22 @@ this is what I use to write, read & efficiently manage my journal.
 
 == Usage
 
-`$HOME/.config/journal/lib` should only contain executable files.
+=== Users
+
+* `$JOURNAL_NAME` should be the name of the folder containing all pages.
+* `$JOURNAL_SEP` should be the separator between date & page name.
+* `$EDITOR` should be the editor you wish to use to edit your journal.
+
+=== Developper
+
+* `$command_path` should not be changed. tell where to search for COMMAND.
+* `$command_path` should only contain executable files.
+* `$call_mode` the custom COMMAND you try to execute.
+* `$call_command` the UNIX command you try to execute otherwise.
+* `$date` the date of the current day.
+* `$page` the date + page name user wish to edit.
+* `$path` the path where to create the page use wish to edit.
+
 
 == TODO
 
@@ -15,3 +30,5 @@ this is what I use to write, read & efficiently manage my journal.
 
 * Rendre le script compatible à `MacOS`.
 ** Notamment l’appel à la commande `date`.
+
+* trop de variables pour exprimer des concepts pas clair. Simplifier.
