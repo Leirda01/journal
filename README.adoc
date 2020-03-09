@@ -2,6 +2,10 @@
 
 this is what I use to write, read & efficiently manage my journal.
 
+== Usage
+
+`$HOME/.config/journal/lib` should only contain executable files.
+
 == TODO
 
 * Un sommaire pour afficher le titre des pages
