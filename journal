@@ -2,7 +2,7 @@
 
 editor=${EDITOR:=vim}
 journal_name=${JOURNAL_NAME:=saveuriendir}
-journal_separator=${JOURNAL_SEPARATOR:=/}
+journal_separator=${JOURNAL_SEP:=/}
 command_path="$HOME/.config/journal/lib"
 
 if [[ ( -f $command_path/$1 ) ]]; then
