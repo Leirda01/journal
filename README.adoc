@@ -18,7 +18,7 @@ this is what I use to write, read & efficiently manage my journal.
 * `$call_command` the UNIX command you try to execute otherwise.
 * `$date` the current date in the specified format.
 * `$page` the date + page name user wish to edit in the specified format.
-* `$path` the path where to create the page use wish to edit.
+* `$path` the path where to create the page user wish to edit.
 
 == TODO
 
@@ -35,3 +35,6 @@ this is what I use to write, read & efficiently manage my journal.
 ** Généraliser les noms pour avec l’usage de `dirname` et `basename`.
 
 * Ajouter des tests, parce que ça devient compliqué de vérifier à la main…
+** Pas grand chose de satisfaisant pour faire des tests en bash ?
+** Ne pas tester des retours de commandes qui n’ont à priori pas besoin de l’être.
+** La commande `test` (`[[`) semble utile…, dans l’idée d’automatiser.
