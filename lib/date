@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-date=$(date --date="$@" +%Y${journal_separator}%m${journal_separator}%d)
+date=$(date --date="$@" +%Y${sep}%m${sep}%d)
 page=$(mktemp /tmp/journal.XXXXXXXXXX)
 
 trap "rm -r $page" EXIT
@@ -8,7 +8,7 @@ trap "rm -r $page" EXIT
 cd "$HOME/$journal_name"
 for file in $(ls ${date}); do
   echo -e "\n=> $file\n" >> $page
-  cat "${date}${journal_separator}$file" >> $page
+  cat "${date}${sep}$file" >> $page
 done
 
 . "$command_path/write"

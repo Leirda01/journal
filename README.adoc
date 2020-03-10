@@ -33,3 +33,5 @@ this is what I use to write, read & efficiently manage my journal.
 * trop de variables pour exprimer des concepts pas clair. Simplifier.
 ** Spécifier un format style `y-m-d/j`, `y/m/d/j`, `y/m/d-j`, `y-m-d_j`, _etc_.?
 ** Généraliser les noms pour avec l’usage de `dirname` et `basename`.
+
+* Ajouter des tests, parce que ça devient compliqué de vérifier à la main…

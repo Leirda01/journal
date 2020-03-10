@@ -2,7 +2,7 @@
 
 editor=${EDITOR:=vim}
 journal_name=${JOURNAL_NAME:=saveuriendir}
-journal_separator=${JOURNAL_SEP:=/}
+sep=${JOURNAL_SEP:=/}
 command_path="$HOME/.config/journal/lib"
 
 if [[ ( -f $command_path/$1 ) ]]; then
@@ -12,12 +12,12 @@ elif [[ $(type -t $1) ]]; then
 fi
 
 [[ $(date +%-H) -lt 4 ]] && date="yesterday" || date="today"
-date=$(date --date=$date +%Y${journal_separator}%m${journal_separator}%d)
+date=$(date --date=$date +%Y${sep}%m${sep}%d)
 
 [[ $@ ]] && page="${@%%.adoc}.adoc" || page="main.adoc"
-page="$(basename ${date}${journal_separator}${page})"
+page="$(basename ${date}${sep}${page})"
 
-path="$(dirname $HOME/$journal_name/$page)"
+path="$(dirname $HOME/$journal_name/${date}${sep}${page})"
 mkdir -p "$path"; cd "$path"
 
 (
