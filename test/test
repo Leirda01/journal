@@ -17,10 +17,10 @@ for test in test/test-*; do
   HOME="/tmp/$test"
 
   printf "${neutral}%s... " $test
-  if [[ $(source $test) ]]; then
-    echo "${bad}Failed!"
-  else
+  if $($test 2> /dev/null); then
     echo "${good}Passed!"
+  else
+    echo "${bad}Failed!"
   fi
 done;
 
