@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+bad="$(tput setaf 1)$(tput bold)"
+good="$(tput setaf 2)$(tput bold)"
+neutral=$(tput sgr0)
+
+trap "rm -rf /tmp/sandbox" EXIT
+mkdir -p /tmp/sandbox/.config/journal
+ln -s $HOME/.config/journal/lib /tmp/sandbox/.config/journal
+
+HOME=/tmp/sandbox
+EDITOR=`which false`
+
+for test in test/test-*; do
+  printf "${neutral}%s... " $test
+  if [[ $($test) ]]; then
+    echo "${bad}Failed!"
+  else
+    echo "${good}Passed!"
+  fi
+done;
