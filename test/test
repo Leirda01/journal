@@ -1,19 +1,23 @@
 #!/usr/bin/env bash
 
+# Need some color for tests
 bad="$(tput setaf 1)$(tput bold)"
 good="$(tput setaf 2)$(tput bold)"
 neutral=$(tput sgr0)
 
-trap "rm -rf /tmp/sandbox" EXIT
+trap "rm -rf /tmp/test-*" EXIT
 mkdir -p /tmp/sandbox/.config/journal
-ln -s $HOME/.config/journal/lib /tmp/sandbox/.config/journal
-
-HOME=/tmp/sandbox
+command_path="$HOME/.config/journal/lib"
 EDITOR=`which false`
 
 for test in test/test-*; do
+
+  mkdir -p "/tmp/$test/.config/journal"
+  ln -s "$command_path" "/tmp/$test/.config/journal"
+  HOME="/tmp/$test"
+
   printf "${neutral}%s... " $test
-  if [[ $($test) ]]; then
+  if [[ $(source $test) ]]; then
     echo "${bad}Failed!"
   else
     echo "${good}Passed!"
