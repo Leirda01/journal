@@ -23,5 +23,3 @@ for test in test/test-*; do
     echo "${bad}Failed!"
   fi
 done;
-
-tree -a /tmp/test
