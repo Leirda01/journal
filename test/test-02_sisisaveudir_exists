@@ -2,7 +2,7 @@
 
 (
 
-JOURNAL_NAME=sisisaveudir
+export JOURNAL_NAME=sisisaveudir
 ./journal
 
 exit $( [[ -d $HOME/sisisaveudir ]] )
