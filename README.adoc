@@ -1,4 +1,5 @@
 = Simple journaling script made in bash
+:xmpp: xmpp://leirda@jabber.fr
 
 this is what I use to write, read & efficiently manage my journal.
 
