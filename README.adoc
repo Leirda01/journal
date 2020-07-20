@@ -1,5 +1,6 @@
 = Simple journaling script made in bash
 :xmpp: xmpp://leirda@jabber.fr
+:url-shellcheck: https://github.com/koalaman/shellcheck
 
 this is what I use to write, read & efficiently manage my journal.
 
@@ -39,3 +40,5 @@ this is what I use to write, read & efficiently manage my journal.
 ** Pas grand chose de satisfaisant pour faire des tests en bash ?
 ** Ne pas tester des retours de commandes qui n’ont à priori pas besoin de l’être.
 ** La commande `test` (`[[`) semble utile…, dans l’idée d’automatiser.
+
+* Faire valider les scripts par {url-shellcheck}[shellcheck]
