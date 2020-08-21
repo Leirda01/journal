@@ -16,7 +16,7 @@
 # along with journal.  If not, see <https://www.gnu.org/licenses/>.
 
 editor=${EDITOR:=vim}
-journal_name=${JOURNAL_NAME:=saveuriendir}
+journal_name=${JOURNAL_NAME:=journal}
 sep=${JOURNAL_SEP:=/}
 
 command_path="$HOME/.config/journal/lib"
